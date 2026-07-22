@@ -30,11 +30,11 @@
 
 ## 🔢 Module 1 — Tensors
 
-- [ ] Create tensors: `torch.tensor`, `zeros`, `ones`, `arange`, `linspace`, `rand`, `randn`, `empty`, `full`, `eye`
-- [ ] `_like` variants (`zeros_like`, etc.) and why they're handy
-- [ ] **dtypes**: `float32`, `float16`, `bfloat16`, `int64`, `bool`, etc.; casting with `.to(dtype)` / `.float()`
-- [ ] **Devices**: `.to("cuda")`, `.cpu()`, `.to(device)`; the `device` object; setting a default device
-- [ ] Indexing & slicing; boolean/mask indexing; `torch.where`; fancy/advanced indexing; `gather`/`scatter`
+- [x] Create tensors: `torch.tensor`, `zeros`, `ones`, `arange`, `linspace`, `rand`, `randn`, `empty`, `full`, `eye`
+- [x] `_like` variants (`zeros_like`, etc.) and why they're handy
+- [x] **dtypes**: `float32`, `float16`, `bfloat16`, `int64`, `bool`, etc.; casting with `.to(dtype)` / `.float()`
+- [x] **Devices**: `.to("cuda")`, `.cpu()`, `.to(device)`; the `device` object; setting a default device
+- [x] Indexing & slicing; boolean/mask indexing; `torch.where`; fancy/advanced indexing; `gather`/`scatter`
 - [ ] Shape ops: `reshape`, `view`, `permute`, `transpose`, `squeeze`, `unsqueeze`, `flatten`, `expand`, `repeat`
 - [ ] ⭐ **`view` vs `reshape`**, what **contiguous** means, `.contiguous()`, and **strides**/storage (the mental model for *why* some ops are free and some copy)
 - [ ] **Broadcasting** rules (align trailing dims; size-1 dims stretch) — internalize this cold
