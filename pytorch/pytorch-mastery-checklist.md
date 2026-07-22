@@ -14,13 +14,13 @@
 
 ## 🧰 Module 0 — Setup & Mental Model
 
-- [ ] Install PyTorch with the correct CUDA build for your GPU (use the selector on pytorch.org)
-- [ ] Verify install: `torch.__version__`, `torch.cuda.is_available()`, `torch.cuda.get_device_name()`
-- [ ] Understand what PyTorch *is*: eager-mode tensor library + autograd + `nn` + distributed + a compiler (`torch.compile`)
-- [ ] Understand the ecosystem you'll touch: `torch`, `torchvision`/`torchaudio` (data), `torchao` (quant/FP8), `torchtitan` (reference LLM training), `torch.distributed` (scaling)
-- [ ] Know the difference between **eager mode** (default, Pythonic, debuggable) and **compiled/graph mode** (`torch.compile`, faster)
-- [ ] Set up a GPU environment you can actually run on (local GPU, Colab, or a rented cloud instance — you'll want ≥1 real GPU by Phase 2, and ≥2 GPUs by Phase 3)
-- [ ] ⭐ Learn to read the [official docs](https://docs.pytorch.org/docs/stable/) and [tutorials](https://docs.pytorch.org/tutorials/) — they are excellent and authoritative
+- [x] Install PyTorch with the correct CUDA build for your GPU (use the selector on pytorch.org)
+- [x] Verify install: `torch.__version__`, `torch.cuda.is_available()`, `torch.cuda.get_device_name()`
+- [x] Understand what PyTorch *is*: eager-mode tensor library + autograd + `nn` + distributed + a compiler (`torch.compile`)
+- [x] Understand the ecosystem you'll touch: `torch`, `torchvision`/`torchaudio` (data), `torchao` (quant/FP8), `torchtitan` (reference LLM training), `torch.distributed` (scaling)
+- [x] Know the difference between **eager mode** (default, Pythonic, debuggable) and **compiled/graph mode** (`torch.compile`, faster)
+- [x] Set up a GPU environment you can actually run on (local GPU, Colab, or a rented cloud instance — you'll want ≥1 real GPU by Phase 2, and ≥2 GPUs by Phase 3)
+- [x] ⭐ Learn to read the [official docs](https://docs.pytorch.org/docs/stable/) and [tutorials](https://docs.pytorch.org/tutorials/) — they are excellent and authoritative
 
 > 🧪 **Assignment (10 min):** Write a 5-line script that prints your PyTorch version, whether CUDA is available, the GPU name, and creates one tensor on the GPU. Confirm it runs without error.
 
