@@ -7,6 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "diffusers[torch]>=0.39.0",
     "h5py>=3.16.0",
+    "imageio>=2.37.4",
     "torch>=2.11.0",
     "torchvision>=0.26.0",
     "transformers>=5.14.1",
