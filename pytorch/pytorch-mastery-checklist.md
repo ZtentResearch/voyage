@@ -35,14 +35,14 @@
 - [x] **dtypes**: `float32`, `float16`, `bfloat16`, `int64`, `bool`, etc.; casting with `.to(dtype)` / `.float()`
 - [x] **Devices**: `.to("cuda")`, `.cpu()`, `.to(device)`; the `device` object; setting a default device
 - [x] Indexing & slicing; boolean/mask indexing; `torch.where`; fancy/advanced indexing; `gather`/`scatter`
-- [ ] Shape ops: `reshape`, `view`, `permute`, `transpose`, `squeeze`, `unsqueeze`, `flatten`, `expand`, `repeat`
-- [ ] ⭐ **`view` vs `reshape`**, what **contiguous** means, `.contiguous()`, and **strides**/storage (the mental model for *why* some ops are free and some copy)
-- [ ] **Broadcasting** rules (align trailing dims; size-1 dims stretch) — internalize this cold
-- [ ] Math ops & reductions: `sum`, `mean`, `max`/`min`, `argmax`, `norm`, `matmul`/`@`, `einsum`, and the `dim=`/`keepdim=` args
-- [ ] ⭐ **In-place ops** (trailing `_`, e.g. `add_`, `mul_`) — what they save and when they break autograd
-- [ ] Concatenation & splitting: `cat`, `stack`, `split`, `chunk`, `unbind`
-- [ ] NumPy interop: `.numpy()`, `torch.from_numpy`, and the shared-memory gotcha
-- [ ] ⭐ **CPU↔GPU transfer cost** and why you minimize `.item()`/`.cpu()` calls in hot loops
+- [x] Shape ops: `reshape`, `view`, `permute`, `transpose`, `squeeze`, `unsqueeze`, `flatten`, `expand`, `repeat`
+- [x] ⭐ **`view` vs `reshape`**, what **contiguous** means, `.contiguous()`, and **strides**/storage (the mental model for *why* some ops are free and some copy)
+- [x] **Broadcasting** rules (align trailing dims; size-1 dims stretch) — internalize this cold
+- [x] Math ops & reductions: `sum`, `mean`, `max`/`min`, `argmax`, `norm`, `matmul`/`@`, `einsum`, and the `dim=`/`keepdim=` args
+- [x] ⭐ **In-place ops** (trailing `_`, e.g. `add_`, `mul_`) — what they save and when they break autograd
+- [x] Concatenation & splitting: `cat`, `stack`, `split`, `chunk`, `unbind`
+- [x] NumPy interop: `.numpy()`, `torch.from_numpy`, and the shared-memory gotcha
+- [x] ⭐ **CPU↔GPU transfer cost** and why you minimize `.item()`/`.cpu()` calls in hot loops
 
 > 🧪 **Assignment (30 min):** Given a random tensor of shape `(32, 128)`, (1) normalize each row to unit L2 norm, (2) compute the pairwise cosine-similarity matrix `(32, 32)` using only vectorized ops (no Python loops), and (3) verify the diagonal is all ~1.0. Use `einsum` or `@` for the matmul.
 
