@@ -50,16 +50,16 @@
 
 ## 🎯 Module 2 — Autograd (automatic differentiation)
 
-- [ ] `requires_grad=True`; how PyTorch builds a **dynamic computational graph** on the fly
-- [ ] `.backward()` and reading gradients from `.grad`
-- [ ] Scalar vs non-scalar backward (the `gradient=` argument / why loss must be a scalar)
-- [ ] ⭐ **`torch.no_grad()` vs `torch.inference_mode()`** — when to use each (inference_mode is stricter/faster)
-- [ ] `.detach()` — cut a tensor out of the graph; when you need it
-- [ ] **Gradient accumulation**: grads *sum* across `.backward()` calls until zeroed — the basis for large effective batch sizes
-- [ ] Zeroing grads: `optimizer.zero_grad()` and ⭐ `set_to_none=True` (default now; slightly faster)
-- [ ] `retain_graph`, `create_graph` (higher-order gradients)
-- [ ] ⭐ Writing a **custom `torch.autograd.Function`** (custom forward + backward) — you'll need this for custom kernels/ops
-- [ ] Debugging: `torch.autograd.set_detect_anomaly(True)` to find NaNs/bad backward
+- [x] `requires_grad=True`; how PyTorch builds a **dynamic computational graph** on the fly
+- [x] `.backward()` and reading gradients from `.grad`
+- [x] Scalar vs non-scalar backward (the `gradient=` argument / why loss must be a scalar)
+- [x] ⭐ **`torch.no_grad()` vs `torch.inference_mode()`** — when to use each (inference_mode is stricter/faster)
+- [x] `.detach()` — cut a tensor out of the graph; when you need it
+- [x] **Gradient accumulation**: grads *sum* across `.backward()` calls until zeroed — the basis for large effective batch sizes
+- [x] Zeroing grads: `optimizer.zero_grad()` and ⭐ `set_to_none=True` (default now; slightly faster)
+- [x] `retain_graph`, `create_graph` (higher-order gradients)
+- [x] ⭐ Writing a **custom `torch.autograd.Function`** (custom forward + backward) — you'll need this for custom kernels/ops
+- [x] Debugging: `torch.autograd.set_detect_anomaly(True)` to find NaNs/bad backward
 
 > 🧪 **Assignment (25 min):** Implement `y = sin(x²)` for a scalar `x`, call `.backward()`, and confirm PyTorch's `x.grad` equals the hand-derived derivative `2x·cos(x²)` at three different `x` values. Then do it *without* autograd using `torch.autograd.grad`, and confirm they match.
 
