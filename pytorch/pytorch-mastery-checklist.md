@@ -67,17 +67,17 @@
 
 ## 🧱 Module 3 — Building Models with `nn.Module`
 
-- [ ] `nn.Module`: `__init__` + `forward`; why you never call `.forward()` directly (call `model(x)`)
-- [ ] **Parameters vs buffers**: `nn.Parameter`, `register_buffer` (e.g., running stats, positional encodings)
-- [ ] Core layers: `Linear`, `Embedding`, `Conv2d`, `LayerNorm`/`RMSNorm`, `Dropout`, `BatchNorm`
-- [ ] Activations: `ReLU`, `GELU`, `SiLU`/`Swish`, `Softmax`, and functional vs module forms (`F.relu` vs `nn.ReLU`)
-- [ ] Containers: `nn.Sequential`, `nn.ModuleList`, `nn.ModuleDict` (and why a plain Python list of layers *won't* register params)
-- [ ] Inspecting models: `.parameters()`, `.named_parameters()`, `.modules()`, `.state_dict()`, counting params
-- [ ] ⭐ **Weight initialization**: `nn.init`, why init matters, custom `apply(init_fn)`
-- [ ] `model.train()` vs `model.eval()` and what actually changes (Dropout, BatchNorm)
-- [ ] **Save/load**: `state_dict` + `torch.save`/`load` (save the state_dict, *not* the whole model); `load_state_dict(strict=...)`
-- [ ] ⭐ `.to(device)` / `.half()` / `.bfloat16()` on a whole module; moving models correctly
-- [ ] ⭐ **Meta device** init (`device="meta"`) — build huge models with no memory, then materialize (essential at scale)
+- [x] `nn.Module`: `__init__` + `forward`; why you never call `.forward()` directly (call `model(x)`)
+- [x] **Parameters vs buffers**: `nn.Parameter`, `register_buffer` (e.g., running stats, positional encodings)
+- [x] Core layers: `Linear`, `Embedding`, `Conv2d`, `LayerNorm`/`RMSNorm`, `Dropout`, `BatchNorm`
+- [x] Activations: `ReLU`, `GELU`, `SiLU`/`Swish`, `Softmax`, and functional vs module forms (`F.relu` vs `nn.ReLU`)
+- [x] Containers: `nn.Sequential`, `nn.ModuleList`, `nn.ModuleDict` (and why a plain Python list of layers *won't* register params)
+- [x] Inspecting models: `.parameters()`, `.named_parameters()`, `.modules()`, `.state_dict()`, counting params
+- [x] ⭐ **Weight initialization**: `nn.init`, why init matters, custom `apply(init_fn)`
+- [x] `model.train()` vs `model.eval()` and what actually changes (Dropout, BatchNorm)
+- [x] **Save/load**: `state_dict` + `torch.save`/`load` (save the state_dict, *not* the whole model); `load_state_dict(strict=...)`
+- [x] ⭐ `.to(device)` / `.half()` / `.bfloat16()` on a whole module; moving models correctly
+- [x] ⭐ **Meta device** init (`device="meta"`) — build huge models with no memory, then materialize (essential at scale)
 
 > 🧪 **Assignment (40 min):** Build a small MLP (`2 → 16 → 16 → 1`) as an `nn.Module` and train it to solve XOR (4 data points). Confirm it reaches ~0 loss. Then save the `state_dict`, reload it into a fresh model instance, and verify identical outputs.
 
