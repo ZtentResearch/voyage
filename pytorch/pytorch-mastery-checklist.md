@@ -100,14 +100,14 @@
 
 ## 📦 Module 5 — Data Loading
 
-- [ ] `Dataset` (map-style: `__len__` + `__getitem__`) — write a custom one
-- [ ] `DataLoader`: `batch_size`, `shuffle`, `drop_last`
-- [ ] ⭐ **`num_workers`** (parallel loading), **`pin_memory=True`**, and **`non_blocking=True`** transfers — the standard fast-input-pipeline combo
-- [ ] `prefetch_factor`, `persistent_workers` for throughput
-- [ ] **`collate_fn`**: custom batching, padding variable-length sequences
-- [ ] `IterableDataset` for streaming / sharded / infinite datasets (what you use for large corpora)
-- [ ] Samplers: `RandomSampler`, `WeightedRandomSampler`, and a preview of `DistributedSampler` (Module 13)
-- [ ] ⭐ Diagnosing an **input-bound** pipeline (GPU starving while CPU loads) vs compute-bound
+- [x] `Dataset` (map-style: `__len__` + `__getitem__`) — write a custom one
+- [x] `DataLoader`: `batch_size`, `shuffle`, `drop_last`
+- [x] ⭐ **`num_workers`** (parallel loading), **`pin_memory=True`**, and **`non_blocking=True`** transfers — the standard fast-input-pipeline combo
+- [x] `prefetch_factor`, `persistent_workers` for throughput
+- [x] **`collate_fn`**: custom batching, padding variable-length sequences
+- [x] `IterableDataset` for streaming / sharded / infinite datasets (what you use for large corpora)
+- [x] Samplers: `RandomSampler`, `WeightedRandomSampler`, and a preview of `DistributedSampler` (Module 13)
+- [x] ⭐ Diagnosing an **input-bound** pipeline (GPU starving while CPU loads) vs compute-bound
 
 > 🧪 **Assignment (35 min):** Write a custom `Dataset` that yields `(sequence, length)` pairs of *random* integer sequences with lengths 5–15. Write a `collate_fn` that pads a batch to the max length in that batch and returns a padding mask. Iterate one batch with `num_workers=2` and print the padded shape + mask.
 
