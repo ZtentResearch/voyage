@@ -85,14 +85,14 @@
 
 ## 📉 Module 4 — Losses, Optimizers & Schedulers
 
-- [ ] Loss functions: `CrossEntropyLoss` (⭐ expects raw logits + class indices, has softmax built in), `MSELoss`, `BCEWithLogitsLoss`, `NLLLoss`
-- [ ] ⭐ Understand `reduction=` (`mean`/`sum`/`none`) and why it matters for grad accumulation & masking
-- [ ] Optimizers: `SGD` (+ momentum), `Adam`, **`AdamW`** (the LLM default), `RMSprop`; the `optimizer.step()` loop
-- [ ] ⭐ **Parameter groups**: different LR/weight-decay per group (e.g., no weight decay on norms/biases)
-- [ ] `optimizer.state_dict()` — optimizer state is huge for Adam (2× params); you must checkpoint it
-- [ ] LR schedulers: `StepLR`, `CosineAnnealingLR`, `OneCycleLR`, `LambdaLR`; **warmup + cosine decay** (LLM standard)
-- [ ] ⭐ **Gradient clipping**: `torch.nn.utils.clip_grad_norm_` — prevents blow-ups in transformers
-- [ ] `foreach` / `fused` optimizer implementations (⭐ `fused=True` for speed on GPU)
+- [x] Loss functions: `CrossEntropyLoss` (⭐ expects raw logits + class indices, has softmax built in), `MSELoss`, `BCEWithLogitsLoss`, `NLLLoss`
+- [x] ⭐ Understand `reduction=` (`mean`/`sum`/`none`) and why it matters for grad accumulation & masking
+- [x] Optimizers: `SGD` (+ momentum), `Adam`, **`AdamW`** (the LLM default), `RMSprop`; the `optimizer.step()` loop
+- [x] ⭐ **Parameter groups**: different LR/weight-decay per group (e.g., no weight decay on norms/biases)
+- [x] `optimizer.state_dict()` — optimizer state is huge for Adam (2× params); you must checkpoint it
+- [x] LR schedulers: `StepLR`, `CosineAnnealingLR`, `OneCycleLR`, `LambdaLR`; **warmup + cosine decay** (LLM standard)
+- [x] ⭐ **Gradient clipping**: `torch.nn.utils.clip_grad_norm_` — prevents blow-ups in transformers
+- [x] `foreach` / `fused` optimizer implementations (⭐ `fused=True` for speed on GPU)
 
 > 🧪 **Assignment (30 min):** Take your XOR MLP. Switch the optimizer to `AdamW` with two param groups (weight decay on weights, none on biases). Add a warmup-then-cosine LR schedule over 200 steps and log the LR each step. Plot or print the LR curve to confirm the warmup + decay shape.
 
