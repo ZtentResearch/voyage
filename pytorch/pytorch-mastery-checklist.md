@@ -115,14 +115,14 @@
 
 ## 🔁 Module 6 — The Training Loop & Reproducibility
 
-- [ ] Write the canonical loop from scratch: `for epoch → for batch → forward → loss → zero_grad → backward → clip → step → (scheduler.step)`
-- [ ] Separate **train vs eval loops** (`model.eval()` + `inference_mode()` for validation)
-- [ ] Tracking metrics correctly (accumulate `loss.item()` weighted by batch size; avoid syncing every step)
-- [ ] **Checkpointing**: save model + optimizer + scheduler + epoch/step + RNG state; resume cleanly
-- [ ] ⭐ **Reproducibility**: `torch.manual_seed`, `torch.cuda.manual_seed_all`, `torch.use_deterministic_algorithms(True)`, `cudnn.deterministic`/`benchmark`, and worker seeding
-- [ ] Logging: TensorBoard (`torch.utils.tensorboard`) or Weights & Biases
-- [ ] Early stopping / best-checkpoint tracking
-- [ ] ⭐ Sanity checks every pro runs: **overfit a single batch** to ~0 loss (proves the model+loss+loop are wired correctly)
+- [x] Write the canonical loop from scratch: `for epoch → for batch → forward → loss → zero_grad → backward → clip → step → (scheduler.step)`
+- [x] Separate **train vs eval loops** (`model.eval()` + `inference_mode()` for validation)
+- [x] Tracking metrics correctly (accumulate `loss.item()` weighted by batch size; avoid syncing every step)
+- [x] **Checkpointing**: save model + optimizer + scheduler + epoch/step + RNG state; resume cleanly
+- [x] ⭐ **Reproducibility**: `torch.manual_seed`, `torch.cuda.manual_seed_all`, `torch.use_deterministic_algorithms(True)`, `cudnn.deterministic`/`benchmark`, and worker seeding
+- [x] Logging: TensorBoard (`torch.utils.tensorboard`) or Weights & Biases
+- [x] Early stopping / best-checkpoint tracking
+- [x] ⭐ Sanity checks every pro runs: **overfit a single batch** to ~0 loss (proves the model+loss+loop are wired correctly)
 
 > 🧪 **Assignment (45 min):** Train a small CNN or MLP on a tiny dataset (e.g., a 500-sample subset of MNIST/FashionMNIST or even synthetic data) for a few epochs with train/val split, checkpointing the best model. Then **deliberately overfit a single batch** to near-zero loss as a wiring sanity check. Reload the best checkpoint and report val accuracy.
 
