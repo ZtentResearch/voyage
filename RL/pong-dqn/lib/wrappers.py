@@ -1,6 +1,7 @@
 import collections
 import typing as tt
 
+import ale_py
 import gymnasium as gym
 import numpy as np
 from gymnasium import spaces

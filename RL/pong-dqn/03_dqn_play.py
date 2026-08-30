@@ -7,6 +7,8 @@ import numpy as np
 import torch
 from lib import dqn_model, wrappers
 
+import time
+
 DEFAULT_ENV_NAME = "PongNoFrameskip-v4"
 
 
@@ -19,11 +21,20 @@ if __name__ == "__main__":
         default=DEFAULT_ENV_NAME,
         help="Environment name to use, default=" + DEFAULT_ENV_NAME,
     )
-    parser.add_argument("-r", "--record", required=True, help="Directory for video")
+    parser.add_argument(
+        "-r",
+        "--record",
+        default=None,
+        help="Directory to record video (if omitted, plays live in a window)",
+    )
     args = parser.parse_args()
 
-    env = wrappers.make_env(args.env, render_mode="rgb_array")
-    env = gym.wrappers.RecordVideo(env, video_folder=args.record)
+    if args.record:
+        env = wrappers.make_env(args.env, render_mode="rgb_array")
+        env = gym.wrappers.RecordVideo(env, video_folder=args.record)
+    else:
+        env = wrappers.make_env(args.env, render_mode="human")
+
     net = dqn_model.DQN(env.observation_space.shape, env.action_space.n)
     state = torch.load(args.model, map_location=lambda stg, _: stg, weights_only=True)
     net.load_state_dict(state)
@@ -33,6 +44,8 @@ if __name__ == "__main__":
     c: dict[int, int] = collections.Counter()
 
     while True:
+        if not args.record:
+            time.sleep(0.015)  # smooth ~60 FPS playback for human viewing
         state_v = torch.tensor(np.expand_dims(state, 0))
         q_vals = net(state_v).data.numpy()[0]
         action = int(np.argmax(q_vals))
